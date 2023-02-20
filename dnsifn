@@ -1,0 +1,24 @@
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import KFold
+
+def Get_matrix(path):
+    # Load the Excel file into a Pandas dataframe
+    df = pd.read_excel(path)
+
+    # Alternatively, you can convert the dataframe to a matrix using the `as_matrix()` method (but note that this method is deprecated and will be removed in a future version of Pandas)
+    mat = df.values
+
+    return mat
+
+path_t = r'C:\Users\26271\Desktop\T_Matrix.xlsx'
+path_f = r'C:\Users\26271\Desktop\F_Matrix.xlsx'
+
+t = Get_matrix(path_t)
+f = Get_matrix(path_f)
+
+# 构建数据集和标签
+data = f
+label = t
+
+test = Get_matrix(r'C:\Users\26271\Desktop\test.xlsx')
